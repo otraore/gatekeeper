@@ -1,0 +1,9 @@
+package: github.com/otraore/gatekeeper/goa
+import:
+- package: github.com/goadesign/goa
+- package: github.com/ory-am/hydra
+  subpackages:
+  - sdk
+- package: golang.org/x/net
+  subpackages:
+  - context

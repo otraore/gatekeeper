@@ -1,3 +1,7 @@
+/*
+Package gatekeeper is a multi-framework Hydra middleware library for golang
+This package implements support for the Goa web framework
+*/
 package gatekeeper
 
 import (

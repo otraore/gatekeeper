@@ -1,0 +1,8 @@
+package: github.com/otraore/gatekeeper/echo
+import:
+- package: github.com/labstack/echo
+  subpackages:
+  - engine/standard
+- package: github.com/ory-am/hydra
+  subpackages:
+  - sdk

@@ -1,0 +1,6 @@
+package: github.com/otraore/gatekeeper/gin
+import:
+- package: github.com/gin-gonic/gin
+- package: github.com/ory-am/hydra
+  subpackages:
+  - sdk
