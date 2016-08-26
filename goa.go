@@ -22,17 +22,19 @@ func NewGoa(hc *hydra.Client) *GoaGK {
 	}
 }
 
-// ScopesRequired verifies if the token is valid and if the scope requirements are met
-func (gk *GoaGK) ScopesRequired(scopes ...string) goa.Middleware {
+// ScopesRequired verifies if the token is valid and if the scope requirements
+// within the goa context are met
+func (gk *GoaGK) ScopesRequired() goa.Middleware {
 	return func(h goa.Handler) goa.Handler {
-		return func(ctx context.Context, rw http.ResponseWriter, req *http.Request) error {
-			hctx, err := gk.hc.Warden.TokenValid(ctx, gk.hc.Warden.TokenFromRequest(req), scopes...)
+		return func(ctx context.Context, w http.ResponseWriter, req *http.Request) error {
+			token := gk.hc.Warden.TokenFromRequest(req)
+			scopes := goa.ContextRequiredScopes(ctx)
+			hydraCtx, err := gk.hc.Warden.TokenValid(ctx, token, scopes...)
 			if err != nil {
-				return errUnAuthorized(err)
+				return goa.ErrUnauthorized(err)
 			}
-			// All required scopes are found
-			context.WithValue(ctx, "hydra", hctx)
-			return h(ctx, rw, req)
+			context.WithValue(ctx, "hydra", hydraCtx)
+			return h(ctx, w, req)
 		}
 	}
 }
