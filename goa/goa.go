@@ -15,8 +15,8 @@ type GoaGK struct {
 	hc *hydra.Client
 }
 
-// NewGoa creates a new Gatekeeper instance for the Echo web framework
-func NewGoa(hc *hydra.Client) *GoaGK {
+// New creates a new Gatekeeper instance for the Echo web framework
+func New(hc *hydra.Client) *GoaGK {
 	return &GoaGK{
 		hc: hc,
 	}

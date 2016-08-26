@@ -12,8 +12,8 @@ type GinGK struct {
 	hc *hydra.Client
 }
 
-// NewGin creates a new Gatekeeper instance for the Gin web framework
-func NewGin(hc *hydra.Client) *GinGK {
+// New creates a new Gatekeeper instance for the Gin web framework
+func New(hc *hydra.Client) *GinGK {
 	return &GinGK{
 		hc: hc,
 	}

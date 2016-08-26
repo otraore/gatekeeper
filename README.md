@@ -16,7 +16,7 @@ import (
     "github.com/gin-gonic/gin"
     "github.com/ory-am/hydra/firewall"
     hydra "github.com/ory-am/hydra/sdk"
-    "github.com/otraore/gatekeeper"
+    "github.com/otraore/gatekeeper/gin"
 )
 
 func handler(c *gin.Context) {
@@ -37,7 +37,7 @@ func main(){
 	}
 	
 	// Create a gatekeeper instance for Gin
-	gk := gatekeeper.NewGin(hc)
+	gk := gatekeeper.New(hc)
 
  	r := gin.Default()
 	r.GET("/protected", gk.ScopesRequired("scope1", "scope2"), handler)
@@ -51,7 +51,7 @@ import (
     "github.com/labstack/echo/engine/standard"
     "github.com/ory-am/hydra/firewall"
     hydra "github.com/ory-am/hydra/sdk"
-    "github.com/otraore/gatekeeper"
+    "github.com/otraore/gatekeeper/echo"
 )
 
 func handler(c echo.Context) {
@@ -72,7 +72,7 @@ func main(){
 	}
 	
 	// Create a gatekeeper instance for Echo
-	gk := gatekeeper.NewGin(hc)
+	gk := gatekeeper.New(hc)
 
  	e := echo.Default()
 	e.GET("/protected", handler, gk.ScopesRequired("scope1", "scope2"),)
