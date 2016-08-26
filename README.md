@@ -54,7 +54,7 @@ import (
     "github.com/otraore/gatekeeper"
 )
 
-func handler(c *gin.Context) {
+func handler(c echo.Context) {
 	ctx := c.Get("hydra").(*firewall.Context)
 	// Now you can access ctx.Subject etc.
 }
