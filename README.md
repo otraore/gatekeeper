@@ -36,7 +36,7 @@ func main(){
 		panic(err)
 	}
 	
-        // Create a gatekeeper instance for Gin
+	// Create a gatekeeper instance for Gin
 	gk := gatekeeper.NewGin(hc)
 
  	r := gin.Default()
@@ -71,7 +71,7 @@ func main(){
 		panic(err)
 	}
 	
-        // Create a gatekeeper instance for Echo
+	// Create a gatekeeper instance for Echo
 	gk := gatekeeper.NewGin(hc)
 
  	e := echo.Default()
