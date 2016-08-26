@@ -6,12 +6,12 @@ import (
 	hydra "github.com/ory-am/hydra/sdk"
 )
 
-// EchoGK represents an instance of Gatekeeper for the Gin web framework
+// EchoGK represents an instance of Gatekeeper for the Echo web framework
 type EchoGK struct {
 	hc *hydra.Client
 }
 
-// NewEcho creates a new Gatekeeper instance for the Gin web framework
+// NewEcho creates a new Gatekeeper instance for the Echo web framework
 func NewEcho(hc *hydra.Client) *EchoGK {
 	return &EchoGK{
 		hc: hc,

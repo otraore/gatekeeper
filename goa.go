@@ -10,12 +10,12 @@ import (
 
 var errUnAuthorized = goa.NewErrorClass("Unauthorized", http.StatusUnauthorized)
 
-// GoaGK represents an instance of Gatekeeper for the Gin web framework
+// GoaGK represents an instance of Gatekeeper for the Echo web framework
 type GoaGK struct {
 	hc *hydra.Client
 }
 
-// NewGoa creates a new Gatekeeper instance for the Gin web framework
+// NewGoa creates a new Gatekeeper instance for the Echo web framework
 func NewGoa(hc *hydra.Client) *GoaGK {
 	return &GoaGK{
 		hc: hc,
