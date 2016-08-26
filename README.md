@@ -3,7 +3,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/otraore/gatekeeper)](https://goreportcard.com/report/github.com/otraore/gatekeeper)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
-Hydra middleware for golang web frameworks. Inspired by [gin-hydra](https://github.com/janekolszak/gin-hydra), it current has support for [gin](https://github.com/gin-gonic/gin), [echo](https://github.com/labstack/echo), and [goa](https://github.com/goadesign/goa). More framework support is planned.
+[Hydra](https://github.com/ory-am/hydra) middleware for golang web frameworks. Inspired by [gin-hydra](https://github.com/janekolszak/gin-hydra), it current has support for [gin](https://github.com/gin-gonic/gin), [echo](https://github.com/labstack/echo), and [goa](https://github.com/goadesign/goa). More framework support is planned.
 
 ## Install
 ``` bash
